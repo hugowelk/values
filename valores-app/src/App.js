@@ -349,6 +349,21 @@ const styles = `
     padding-top: 4px;
   }
 
+  .value-card-questions {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    line-height: 1.5;
+    margin-top: 6px;
+    font-weight: 300;
+  }
+
+  .value-card-questions li {
+    list-style: none;
+    padding: 2px 0;
+  }
+
   .ranking-footer {
     display: flex;
     justify-content: space-between;
@@ -743,6 +758,11 @@ export default function App() {
                     : <div className="value-icon-unselected">{v.icon}</div>
                   }
                   <div className="value-card-name">{v.title}</div>
+                  <ul className="value-card-questions">
+                    {v.questions.map((q, i) => (
+                      <li key={i}>{q}</li>
+                    ))}
+                  </ul>
                 </div>
               );
             })}
